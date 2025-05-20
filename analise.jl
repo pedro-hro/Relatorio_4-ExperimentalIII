@@ -95,11 +95,14 @@ function analisar_parte3()
 	forca = calcular_forca(massaParte3, massa0Parte3)
 	println("Força (N) = $forca")
 
-	p3 = scatter(angulosParte3, forca,
+	sintheta = sind.(angulosParte3)
+	println("sin(θ) = $sintheta")
+
+	p3 = scatter(sintheta, forca,
 		label = "Dados experimentais",
-		xlabel = "Ângulo (graus)",
+		xlabel = "Seno(θ)",
 		ylabel = "Força (N)",
-		title = "Força Magnética vs. Ângulo - Parte III",
+		title = "Força Magnética vs. Seno do Ângulo - Parte III",
 		marker = :circle,
 		markersize = 6,
 		legend = :bottomleft)
